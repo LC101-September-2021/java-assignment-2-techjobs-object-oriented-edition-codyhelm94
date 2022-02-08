@@ -69,6 +69,12 @@ public class JobTest {
         Assert.assertEquals("OOPS! This job does not seem to exist.",testFour.toString());
     }
 
-
+    @Test
+    public void testToStringStartsAndEndsWithNewLine(){
+        Job testOne=new Job("Product tester",new Employer("ACME"), new Location("Desert"),
+                new PositionType("Quality Control"),new CoreCompetency("Persistence"));
+        Assert.assertEquals('\n',testOne.toString().charAt(0));
+        Assert.assertEquals('\n',testOne.toString().charAt(testOne.toString().length()-1));
+    }
 
 }
